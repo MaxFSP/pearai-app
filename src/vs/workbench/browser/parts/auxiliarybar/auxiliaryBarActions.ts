@@ -163,15 +163,15 @@ export class ResizeAuxiliaryBarWidthAction extends Action2 {
 			f1: true,
 			keybinding: {
 				weight: KeybindingWeight.WorkbenchContrib,
-				primary: KeyMod.CtrlCmd | KeyCode.BracketLeft,
+				primary: KeyMod.CtrlCmd | KeyCode.Backslash,
 				linux: {
-					primary: KeyMod.CtrlCmd | KeyCode.BracketLeft
+					primary: KeyMod.CtrlCmd | KeyCode.Backslash
 				},
 				win: {
-					primary: KeyMod.Alt | KeyCode.BracketLeft
+					primary: KeyMod.CtrlCmd | KeyCode.Backslash
 				},
 				mac: {
-					primary: KeyMod.CtrlCmd | KeyCode.BracketLeft
+					primary: KeyMod.CtrlCmd | KeyCode.Backslash
 				}
 			},
 		});
@@ -205,6 +205,7 @@ export class ResizeAuxiliaryBarWidthAction extends Action2 {
 		// Calculate the minimum width for the auxiliary bar
 		// 70% of the window width is the maximum width
 		const maxWidth = (0.7 * mainWindow.innerWidth);
+		console.log('maxWidth', maxWidth);
 		// The minimum width is the maximum width, unless it is less than the max of (previous width * 2) or the predetermined minimum width
 		const minWidth = Math.min(maxWidth, Math.max(ResizeAuxiliaryBarWidthAction._previousAuxiliaryBarWidth * 2, PSEUDO_MINIMUM_AUX_BAR_WIDTH));
 
